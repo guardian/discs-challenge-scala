@@ -29,7 +29,7 @@ object Visualise {
        |    label {
        |      display: block;
        |      float: left;
-       |      min-width: 250px;
+       |      min-width: 100px;
        |    }
        |  </style>
        |  <script>
