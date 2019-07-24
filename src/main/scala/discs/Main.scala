@@ -1,23 +1,35 @@
-package example
+package discs
+
+import java.nio.charset.StandardCharsets
+import java.nio.file.{Files, Paths}
+import scala.Console.{RED, CYAN, MAGENTA, RESET}
+
+import discs.DiscLogic._
 
 
-case class Point(label: String, x: Double, y: Double)
-case class Disc(center: Point, radius: Double)
-
-
-object Hello {
+object Main {
   def main(args: Array[String]): Unit = {
-    // do some logic here
-    val answerDiscs = ???
-    println(formatAnswer(answerDiscs))
+    // your submission
+    val answer = workOutAnswer(points)
+    if (answer.length > 50) {
+      println(s"${RED}A valid submission contains at most 50 discs. This answer contains ${answer.length} discs ${RESET}")
+    } else {
+      val totalArea = answer.map(areaOfDisc).sum
+      println(s"${CYAN}Your answer is:${RESET} ${MAGENTA}${formatAnswer(answer)}${RESET}")
+      println(s"${CYAN}The total area of your answer is:${RESET} ${MAGENTA}$totalArea${RESET}")
+
+      // generate visualisation
+      val html = Visualise.generateHtml(points, answer)
+      val visualisationFile = s"/tmp/discs-answer.html"
+      Files.write(Paths.get(visualisationFile), html.getBytes(StandardCharsets.UTF_8))
+      println(s"Open the following in your browser to see your answer")
+      println(s"${CYAN}Visualisation:${RESET} ${MAGENTA}file://$visualisationFile${RESET}")
+    }
   }
-
-
-  // to get you started...
 
   def formatAnswer(discs: List[Disc]): String = {
     discs
-      .map(d => s"${d.center.label},${d.radius}")
+      .map(d => s"${d.centre.label},${d.radius}")
       .mkString(",")
   }
 
@@ -124,101 +136,3 @@ object Hello {
     Point("100", 664.61, 287.01)
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
