@@ -1,5 +1,6 @@
 package discs
 
+
 object Visualise {
   def generateHtml(points: List[Point], discs: List[Disc]): String = {
     val pointEls = points.map { point =>

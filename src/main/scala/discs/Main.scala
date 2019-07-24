@@ -2,9 +2,10 @@ package discs
 
 import java.nio.charset.StandardCharsets
 import java.nio.file.{Files, Paths}
-import scala.Console.{RED, CYAN, MAGENTA, RESET}
 
 import discs.DiscLogic._
+
+import scala.Console.{CYAN, MAGENTA, RED, RESET}
 
 
 object Main {
