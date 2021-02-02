@@ -2,7 +2,7 @@ package discs
 
 
 object Visualise {
-  def generateHtml(points: List[Point], discs: List[Disc]): String = {
+  def generateHtml(points: List[Point], discs: List[Disc], totalRadius: Double): String = {
     val pointEls = points.map { point =>
       s"""<circle class="point" cx='${point.x}' cy='${1000 - point.y}' r='2' fill='black'
          |data-label='${point.label}' data-radius='-' data-position='x=${point.x}, y=${point.y}' data-pinned="false"
@@ -23,15 +23,21 @@ object Visualise {
        |<head>
        |  <title>Discs answer</title>
        |  <style>
+       |    html {
+       |      font-family: sans-serif;
+       |    }
        |    input.pinned-disc-info {
        |      padding: 5px;
        |      border: solid 1px #006666;
        |      background-color: #f7f7f7;
+       |      width: 400px;
+       |      margin-top: 1px;
        |    }
        |    label {
        |      display: block;
        |      float: left;
-       |      min-width: 100px;
+       |      min-width: 85px;
+       |      padding-top: 5px;
        |    }
        |  </style>
        |  <script>
@@ -83,7 +89,8 @@ object Visualise {
        |  <p>
        |    <div>
        |      <label for="current-label">Label</label>
-       |      <input type="text" class="pinned-disc-info" name="current-label" value="" />
+       |      <input type="text" class="pinned-disc-info" name="current-label" value=""
+       |        placeholder="Click on a disc or point below to see its information" />
        |    </div>
        |    <div>
        |      <label for="current-label">Radius</label>
@@ -92,6 +99,9 @@ object Visualise {
        |    <div>
        |      <label for="current-label">Position</label>
        |      <input type="text" class="pinned-disc-info" name="current-position" value="" />
+       |    </div>
+       |    <div>
+       |      <p>Total radius: <code>$totalRadius</code></p>
        |    </div>
        |  </p>
        |  <svg style="margin: 10px; background-colour: #f7f7f7; border: solid 1px #ccc;" height="1000" width="1000">

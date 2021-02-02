@@ -23,7 +23,7 @@ object Main {
       println(s"${CYAN}The total area of your answer is:${RESET} ${MAGENTA}$totalArea${RESET}")
 
       // generate visualisation
-      val html = Visualise.generateHtml(points, answer)
+      val html = Visualise.generateHtml(points, answer, totalArea)
       val visualisationFile = s"/tmp/discs-answer.html"
       Files.write(Paths.get(visualisationFile), html.getBytes(StandardCharsets.UTF_8))
       println(s"Open the following in your browser to see your answer")
