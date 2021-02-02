@@ -10,11 +10,14 @@ import scala.Console.{CYAN, MAGENTA, RED, RESET}
 
 object Main {
   def main(args: Array[String]): Unit = {
-    // your submission
+    // calculate an answer
     val answer = workOutAnswer(points)
+
+    // validate and display the answer
     if (answer.length > 50) {
       println(s"${RED}A valid submission contains at most 50 discs. This answer contains ${answer.length} discs ${RESET}")
     } else {
+      // print answer
       val totalArea = answer.map(areaOfDisc).sum
       println(s"${CYAN}Your answer is:${RESET} ${MAGENTA}${formatAnswer(answer)}${RESET}")
       println(s"${CYAN}The total area of your answer is:${RESET} ${MAGENTA}$totalArea${RESET}")

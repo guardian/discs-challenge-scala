@@ -1,14 +1,15 @@
-Non Overlapping Disks
+Non Overlapping Discs
 =====================
 
-Your goal is to make a list of up to 50 discs, each centred on one of
-the provided points. The discs should not overlap any other disc or
-any other point.  Each disc can have its own radius, you should try to
-make discs as large as you can without them overlapping other discs or
-points.
+Your goal is to find a list of up to 50 discs with the largest
+possible area.
 
-The challenge is to find a list of discs with the highest possible
-total area.
+Each disc should be centred on one of the 100 provided points and the
+discs should not overlap any other disc or any other point.
+
+Your list of 50 discs must be specified with a radius and the point
+upon which they are centered. You should try to make discs as large as
+you can without them overlapping other discs or points.
 
 Good luck, have fun!
 
@@ -16,7 +17,8 @@ Good luck, have fun!
 
 ## Usage
 
-This project comes set up for completing the challenge.
+This project comes set up for completing the challenge, including an
+example answer that you can try and improve on.
 
     $ sbt
     ...
@@ -30,8 +32,10 @@ following:
     Open the following in your browser to see your answer:
     Visualisation: file:///tmp/discs-answer.html
 
-You can then load the visualisation file in your web-browser to look
-at the answer.
+You can load the visualisation file in your web-browser as instructed
+to look at the answer. It can be really helpful to do this to get a
+sense of where your solution can be improved, or to debug problems
+with your approach.
 
 If you want to run the project every time the code changes you can use
 `~run`, which will watch for changes and execute the `run` command
@@ -41,7 +45,7 @@ each time.
     ...
     > ~run
 
-This initially provided answer is not a very good one, hopefully
+This initially provided answer is not a very good one, have a look at
 you'll be able to improve on it! It only has 20 discs, you can use up
 to 50 in your answer.  Also, all the discs are hard-coded to a radius
 of 20. It would be better to make each disc as large as fits in the
