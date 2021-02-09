@@ -53,6 +53,24 @@ available space (i.e. without overlapping another disc or point).
 
 ## Repository layout
 
+```
+.
+├── README.md
+├── build.sbt
+├── project
+│   └── build.properties
+└── src
+    └── main
+        └── scala
+            └── discs
+                ├── DiscLogic.scala
+                ├── Main.scala
+                ├── Visualise.scala
+                └── models.scala
+
+5 directories, 7 files
+```
+
 ### DiscLogic
 
 The [DiscLogic.scala](src/main/scala/discs/DiscLogic.scala) file
